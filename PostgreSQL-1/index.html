@@ -39,11 +39,12 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://res.cloudinary.com/dseg0uwc9/image/upload/v1730303549/%E9%83%A8%E8%90%BD%E6%A0%BC%E5%B0%88%E7%94%A8/%E5%89%8D%E7%AB%AF%E5%8B%87%E5%A3%AB%E5%A4%A7%E9%97%96%E5%85%AD%E8%A7%92%E5%BE%8C%E7%AB%AF%E9%AB%94%E9%A9%97%E7%87%9F/%E5%89%8D%E5%BE%8C%E7%AB%AF%E6%A5%B5%E7%B0%A1%E6%98%93%E6%9E%B6%E6%A7%8B%E5%9C%96_dqigqz.png">
 <meta property="article:published_time" content="2024-10-30T14:43:49.000Z">
-<meta property="article:modified_time" content="2024-10-31T04:41:14.844Z">
+<meta property="article:modified_time" content="2024-10-31T06:12:06.673Z">
 <meta property="article:author" content="LING,JUN HAO">
 <meta property="article:tag" content="DDL">
 <meta property="article:tag" content="DML">
 <meta property="article:tag" content="PostgreSQL">
+<meta property="article:tag" content="六角學院">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://res.cloudinary.com/dseg0uwc9/image/upload/v1730303549/%E9%83%A8%E8%90%BD%E6%A0%BC%E5%B0%88%E7%94%A8/%E5%89%8D%E7%AB%AF%E5%8B%87%E5%A3%AB%E5%A4%A7%E9%97%96%E5%85%AD%E8%A7%92%E5%BE%8C%E7%AB%AF%E9%AB%94%E9%A9%97%E7%87%9F/%E5%89%8D%E5%BE%8C%E7%AB%AF%E6%A5%B5%E7%B0%A1%E6%98%93%E6%9E%B6%E6%A7%8B%E5%9C%96_dqigqz.png">
 
@@ -244,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-10-31 12:41:14" itemprop="dateModified" datetime="2024-10-31T12:41:14+08:00">2024-10-31</time>
+                <time title="修改時間：2024-10-31 14:12:06" itemprop="dateModified" datetime="2024-10-31T14:12:06+08:00">2024-10-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,13 +276,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2.9k</span>
+              <span>5.7k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>3 分鐘</span>
+              <span>5 分鐘</span>
             </span>
             <div class="post-description">初步踏入後端的世界，了解何謂後端以及資料庫常見語法 DDL、DML。</div>
 
@@ -387,7 +388,7 @@
 </ul>
 </blockquote>
 <hr>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p>本次搭配練習的關聯性資料庫使用<code>PostgreSQL</code>，並搭配線上工具<code>pg-sql</code>，大家可以跟著一起練習，順便加深對於資料庫的操作印象。</p>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p>本次搭配練習的關聯性資料庫使用<code>PostgreSQL</code>，並搭配線上工具<a target="_blank" rel="noopener" href="https://pg-sql.com/">pg-sql</a>，大家可以跟著一起練習，順便加深對於資料庫的操作印象。</p>
 <p>首先我們需要使用<code>DML</code>中的<code>CREATE</code>語法創建練習所需的資料表：</p>
 <blockquote>
 <p>VARCHAR 可以想成我們常用的字串，而 INTEGER 則代表整數。針對資料庫操作的時候，必須按照其型別儲存對應的資料，否則會報錯。</p>
@@ -400,18 +401,147 @@
 <ul>
 <li><strong>INSERT INTO</strong>：我要準備將資料新增進去資料庫囉！</li>
 <li><strong>products</strong>：要插入的資料表名稱</li>
-<li>**( name, price, discount_price… )**：表明要插入的欄位有哪些</li>
+<li><strong>(</strong>name, price, discount_price…<strong>)</strong>：表明要插入的欄位有哪些</li>
 <li><strong>VALUES</strong>：插入的欄位值</li>
 </ul>
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (name, price, discount_price, stock, category, status) <span class="keyword">VALUES</span></span><br><span class="line">   (<span class="string">&#x27;北歐風雙人沙發&#x27;</span>, <span class="number">39900</span>, <span class="number">35900</span>, <span class="number">3</span>, <span class="string">&#x27;沙發&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;貓抓皮L型沙發&#x27;</span>, <span class="number">58900</span>, <span class="number">52900</span>, <span class="number">1</span>, <span class="string">&#x27;沙發&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;典雅三人座沙發&#x27;</span>, <span class="number">42800</span>, <span class="number">42800</span>, <span class="number">5</span>, <span class="string">&#x27;沙發&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;工業風電視櫃&#x27;</span>, <span class="number">5900</span>, <span class="number">4900</span>, <span class="number">12</span>, <span class="string">&#x27;櫃子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;簡約書櫃&#x27;</span>, <span class="number">3500</span>, <span class="number">3500</span>, <span class="number">8</span>, <span class="string">&#x27;櫃子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;玄關鞋櫃&#x27;</span>, <span class="number">2900</span>, <span class="number">2900</span>, <span class="number">15</span>, <span class="string">&#x27;櫃子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;日式雙人床架&#x27;</span>, <span class="number">12000</span>, <span class="number">11200</span>, <span class="number">6</span>, <span class="string">&#x27;床架&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;掀床五尺雙人床&#x27;</span>, <span class="number">19900</span>, <span class="number">18900</span>, <span class="number">2</span>, <span class="string">&#x27;床架&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;兒童床架&#x27;</span>, <span class="number">8900</span>, <span class="number">8900</span>, <span class="number">0</span>, <span class="string">&#x27;床架&#x27;</span>, <span class="string">&#x27;inactive&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;電腦辦公椅&#x27;</span>, <span class="number">4500</span>, <span class="number">3900</span>, <span class="number">20</span>, <span class="string">&#x27;椅子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;餐椅四入組&#x27;</span>, <span class="number">6000</span>, <span class="number">5200</span>, <span class="number">8</span>, <span class="string">&#x27;椅子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;北歐風餐桌&#x27;</span>, <span class="number">15800</span>, <span class="number">14800</span>, <span class="number">4</span>, <span class="string">&#x27;桌子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;實木咖啡桌&#x27;</span>, <span class="number">3200</span>, <span class="number">2900</span>, <span class="number">10</span>, <span class="string">&#x27;桌子&#x27;</span>, <span class="string">&#x27;active&#x27;</span>),</span><br><span class="line">   (<span class="string">&#x27;電競書桌&#x27;</span>, <span class="number">8900</span>, <span class="number">8900</span>, <span class="number">0</span>, <span class="string">&#x27;桌子&#x27;</span>, <span class="string">&#x27;inactive&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="基礎比較運算"><a href="#基礎比較運算" class="headerlink" title="基礎比較運算"></a>基礎比較運算</h3><ul>
-<li>情境 1：單品查詢</li>
+<h3 id="比較運算子應用"><a href="#比較運算子應用" class="headerlink" title="比較運算子應用"></a>比較運算子應用</h3><ul>
+<li><strong>情境 1：單品查詢</strong></li>
 </ul>
 <blockquote>
-<p>客人：「這張北歐風雙人沙發多少錢？」<br>小美翻譯蒟蒻：想找到這張沙發的價格和庫存</p>
+<p>客人：「這張北歐風雙人沙發多少錢？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：想找到這張沙發的價格和庫存</p>
 </blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, price, discount_price, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;北歐風雙人沙發&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li><strong>SELECT</strong>：查詢資料庫中符合條件的資料</li>
+<li><strong>name, price, discount_price, stock</strong>：指定要查詢的欄位</li>
+<li><strong>FROM products</strong>：要查詢的資料表名稱</li>
+<li><strong>WHERE</strong>：查詢條件搭配使用比較運算子(&#x3D;)的使用</li>
+</ul>
+</blockquote>
+<p>在查詢語法當中，有一個特別的存在<code>*</code>，代表查詢所有欄位。這邊可能會想說是不是都用<code>*</code>就好，還需要特別指定要檢索的欄位嗎？</p>
+<blockquote>
+<p>回傳的欄位越多，資料庫的檢索和回傳所需的時間就越長。因此，為了提高查詢效率，建議只選擇所需的欄位，讓資料庫更快地返回我們所需要的資料。</p>
+</blockquote>
+<ul>
+<li><strong>情境 2：價格比較</strong></li>
+</ul>
+<blockquote>
+<p>客人：「請列出 5000 元以下的櫃子有哪些？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：找出櫃子類且價格在 5000 以下的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, discount_price</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="operator">=</span> <span class="string">&#x27;櫃子&#x27;</span> <span class="keyword">AND</span> discount_price <span class="operator">&lt;</span> <span class="number">5000</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 3：價格比較</strong></li>
+</ul>
+<blockquote>
+<p>客人：「日式雙人床架還有貨嗎？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：確認日式雙人床架的庫存狀況</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;日式雙人床架&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AND-邏輯運算符應用"><a href="#AND-邏輯運算符應用" class="headerlink" title="AND 邏輯運算符應用"></a>AND 邏輯運算符應用</h3><p>邏輯運算符中存在<code>AND</code>及<code>OR</code>可以搭配<code>Where</code>在下條件查詢的時候使用。這邊先介紹<code>AND</code>的語法，<code>AND</code>可以組合多個查詢條件但是很重要的是必須全部都符合的情況下才會回傳該筆資料。</p>
+<ul>
+<li><strong>情境 4：尋找預算內且存在庫存的沙發</strong></li>
+</ul>
+<blockquote>
+<p>客人：預算內的商品 客人：「想找 4 萬以下，而且有現貨的沙發」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要同時符合：是沙發、4萬以下、有庫存</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, discount_price, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="operator">=</span> <span class="string">&#x27;沙發&#x27;</span> <span class="keyword">AND</span> discount_price <span class="operator">&lt;</span> <span class="number">40000</span> <span class="keyword">AND</span> stock <span class="operator">&gt;</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 5：特價且有貨</strong></li>
+</ul>
+<blockquote>
+<p>客人：「沙發有哪些特價且現貨的品項？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找到沙發類且有特價（原價大於優惠價）且還有庫存的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, price, discount_price, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="operator">=</span> <span class="string">&#x27;沙發&#x27;</span> <span class="keyword">AND</span> price <span class="operator">&gt;</span> discount_price <span class="keyword">AND</span> stock <span class="operator">&gt;</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="OR-邏輯運算符應用"><a href="#OR-邏輯運算符應用" class="headerlink" title="OR 邏輯運算符應用"></a>OR 邏輯運算符應用</h3><p><code>OR</code>也是邏輯運算符中的一種，代表各個條件之間如果有一個符合的情況下，就會回傳該筆資料。</p>
+<ul>
+<li><strong>情境 6：多分類查詢</strong></li>
+</ul>
+<blockquote>
+<p>客人：「我要找櫃子或桌子」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找出櫃子類或桌子類的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, category</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="operator">=</span> <span class="string">&#x27;櫃子&#x27;</span> <span class="keyword">OR</span> category <span class="operator">=</span> <span class="string">&#x27;桌子&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 7：指定商品</strong></li>
+</ul>
+<blockquote>
+<p>客人：「北歐風雙人沙發和貓抓皮L型沙發哪個還有貨？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找出這兩張特定沙發的庫存狀況</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;北歐風雙人沙發&#x27;</span> <span class="keyword">OR</span> name <span class="operator">=</span> <span class="string">&#x27;貓抓皮L型沙發&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IN-集合與範圍運算符應用"><a href="#IN-集合與範圍運算符應用" class="headerlink" title="IN 集合與範圍運算符應用"></a>IN 集合與範圍運算符應用</h3><p><code>IN</code>是一種集合與範圍運算符，常用於篩選某欄位符合特定值集合的資料。當我們希望查詢結果包含多個特定類別或值時，可以使用 <code>IN</code>來簡化語法。</p>
+<ul>
+<li><strong>情境 8：多分類查詢</strong></li>
+</ul>
+<blockquote>
+<p>客人：「客廳的家具有哪些？我要看沙發、櫃子跟桌子」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找出沙發、櫃子和桌子這三種分類的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, category</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="keyword">IN</span> (<span class="string">&#x27;沙發&#x27;</span>, <span class="string">&#x27;櫃子&#x27;</span>, <span class="string">&#x27;桌子&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 9：特定商品</strong></li>
+</ul>
+<blockquote>
+<p>客人：「電腦辦公椅和餐椅四入組的價格是多少？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找出這兩款椅子的價格</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, discount_price</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> name <span class="keyword">IN</span> (<span class="string">&#x27;電腦辦公椅&#x27;</span>, <span class="string">&#x27;餐椅四入組&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="BETWEEN-集合與範圍運算符應用"><a href="#BETWEEN-集合與範圍運算符應用" class="headerlink" title="BETWEEN 集合與範圍運算符應用"></a>BETWEEN 集合與範圍運算符應用</h3><p><code>BETWEEN</code>也是一種集合與範圍運算符，用於檢索位於特定範圍內的資料，必須指定上下界兩個條件值。</p>
+<ul>
+<li><strong>情境 10：價格區間</strong></li>
+</ul>
+<blockquote>
+<p>客人：「想找 10000 到 20000 之間的商品有哪些？」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：列出這個價格區間的所有商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, discount_price</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> price <span class="keyword">BETWEEN</span> <span class="number">10000</span> <span class="keyword">AND</span> <span class="number">20000</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 11：庫存區間</strong></li>
+</ul>
+<blockquote>
+<p>主管：「請列出庫存在 5 到 15 之間的商品」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：列出庫存數量在這個範圍的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, stock</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> stock <span class="keyword">BETWEEN</span> <span class="number">5</span> <span class="keyword">AND</span> <span class="number">15</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NOT-IN-集合與範圍運算符應用"><a href="#NOT-IN-集合與範圍運算符應用" class="headerlink" title="NOT IN 集合與範圍運算符應用"></a>NOT IN 集合與範圍運算符應用</h3><p><code>NOT IN</code>則是與<code>In</code>相反的意思，也就是不包含多個特定類別或值時，可以使用 <code>NOT IN</code>來簡化語法。</p>
+<ul>
+<li><strong>情境 12：排除商品</strong></li>
+</ul>
+<blockquote>
+<p>主管：「列出除了沙發和床架以外的商品」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要找出不是沙發和床架的商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, category</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> category <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="string">&#x27;沙發&#x27;</span>, <span class="string">&#x27;床架&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新-Update-資料表內資料"><a href="#更新-Update-資料表內資料" class="headerlink" title="更新(Update)資料表內資料"></a>更新(Update)資料表內資料</h3><ul>
+<li><strong>情境 13：調整價格</strong></li>
+</ul>
+<blockquote>
+<p>主管：「北歐風雙人沙發要調降 2000 元」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要如何更新這張沙發的價格</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> products</span><br><span class="line"><span class="keyword">SET</span> price <span class="operator">=</span> price <span class="operator">-</span> <span class="number">2000</span></span><br><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;北歐風雙人沙發&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>情境 14：更新庫存</strong></li>
+</ul>
+<blockquote>
+<p>主管：「電腦辦公椅進了 5 張」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要如何增加這款椅子的庫存數量</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> products</span><br><span class="line"><span class="keyword">SET</span> stock <span class="operator">=</span> stock <span class="operator">+</span> <span class="number">5</span></span><br><span class="line"><span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;電腦辦公椅&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刪除-Delete-資料表內資料"><a href="#刪除-Delete-資料表內資料" class="headerlink" title="刪除(Delete)資料表內資料"></a>刪除(Delete)資料表內資料</h3><blockquote>
+<p>主管：「要清掉兒童床架和電競書桌的資料」<br>小美翻譯蒟蒻ヾ(●´∀｀●)：要如何刪除這兩項商品</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> name <span class="keyword">IN</span> (<span class="string">&#x27;兒童床架&#x27;</span>, <span class="string">&#x27;電競書桌&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>今天主要帶大家初步認識了有關於<code>PostgreSQL</code>的<code>DML</code>相關語法，理解上還算是好理解，但是有時候就是會熊熊忘記ＱＱ 所以還是建議時不時要複習一下手感，回想起這些<del>美好</del>痛苦的程式回憶 ฅ^._.^ฅ 。</p>
 
     </div>
 
@@ -424,6 +554,7 @@
               <a href="/Blog/tags/DDL/" rel="tag"># DDL</a>
               <a href="/Blog/tags/DML/" rel="tag"># DML</a>
               <a href="/Blog/tags/PostgreSQL/" rel="tag"># PostgreSQL</a>
+              <a href="/Blog/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/" rel="tag"># 六角學院</a>
           </div>
 
         
@@ -501,7 +632,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E5%BE%8C%E7%AB%AF%E4%BC%BA%E6%9C%8D%E5%99%A8%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是後端伺服器？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-DML-DDL-%E9%A1%9E%E5%9E%8B%E8%AA%AA%E6%98%8E-%E4%BB%A5-PostgreSQL-%E7%82%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">SQL DML &amp; DDL 類型說明 - 以 PostgreSQL 為例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">2.1.</span> <span class="nav-text">前置作業</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A4%8E%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">基礎比較運算</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E5%BE%8C%E7%AB%AF%E4%BC%BA%E6%9C%8D%E5%99%A8%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是後端伺服器？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-DML-DDL-%E9%A1%9E%E5%9E%8B%E8%AA%AA%E6%98%8E-%E4%BB%A5-PostgreSQL-%E7%82%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">SQL DML &amp; DDL 類型說明 - 以 PostgreSQL 為例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">2.1.</span> <span class="nav-text">前置作業</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97%E5%AD%90%E6%87%89%E7%94%A8"><span class="nav-number">2.2.</span> <span class="nav-text">比較運算子應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AND-%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E7%AC%A6%E6%87%89%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">AND 邏輯運算符應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OR-%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E7%AC%A6%E6%87%89%E7%94%A8"><span class="nav-number">2.4.</span> <span class="nav-text">OR 邏輯運算符應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IN-%E9%9B%86%E5%90%88%E8%88%87%E7%AF%84%E5%9C%8D%E9%81%8B%E7%AE%97%E7%AC%A6%E6%87%89%E7%94%A8"><span class="nav-number">2.5.</span> <span class="nav-text">IN 集合與範圍運算符應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BETWEEN-%E9%9B%86%E5%90%88%E8%88%87%E7%AF%84%E5%9C%8D%E9%81%8B%E7%AE%97%E7%AC%A6%E6%87%89%E7%94%A8"><span class="nav-number">2.6.</span> <span class="nav-text">BETWEEN 集合與範圍運算符應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOT-IN-%E9%9B%86%E5%90%88%E8%88%87%E7%AF%84%E5%9C%8D%E9%81%8B%E7%AE%97%E7%AC%A6%E6%87%89%E7%94%A8"><span class="nav-number">2.7.</span> <span class="nav-text">NOT IN 集合與範圍運算符應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0-Update-%E8%B3%87%E6%96%99%E8%A1%A8%E5%85%A7%E8%B3%87%E6%96%99"><span class="nav-number">2.8.</span> <span class="nav-text">更新(Update)資料表內資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4-Delete-%E8%B3%87%E6%96%99%E8%A1%A8%E5%85%A7%E8%B3%87%E6%96%99"><span class="nav-number">2.9.</span> <span class="nav-text">刪除(Delete)資料表內資料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">3.</span> <span class="nav-text">總結</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
