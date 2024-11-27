@@ -47,6 +47,15 @@
   </url>
   
   <url>
+    <loc>https://ling-jun-hao.github.io/Blog/hexo-github-1/</loc>
+    
+    <lastmod>2024-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ling-jun-hao.github.io/Blog/hexo-github-2/</loc>
     
     <lastmod>2024-05-31</lastmod>
@@ -137,34 +146,7 @@
   </url>
   
   <url>
-    <loc>https://ling-jun-hao.github.io/Blog/hexo-github-1/</loc>
-    
-    <lastmod>2024-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ling-jun-hao.github.io/Blog/JS-9/</loc>
-    
-    <lastmod>2024-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ling-jun-hao.github.io/Blog/React-1/</loc>
-    
-    <lastmod>2024-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ling-jun-hao.github.io/Blog/JS-10/</loc>
     
     <lastmod>2024-05-31</lastmod>
     
@@ -182,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://ling-jun-hao.github.io/Blog/about/</loc>
+    <loc>https://ling-jun-hao.github.io/Blog/JS-9/</loc>
     
     <lastmod>2024-05-31</lastmod>
     
@@ -191,7 +173,25 @@
   </url>
   
   <url>
-    <loc>https://ling-jun-hao.github.io/Blog/tags/</loc>
+    <loc>https://ling-jun-hao.github.io/Blog/JS-10/</loc>
+    
+    <lastmod>2024-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ling-jun-hao.github.io/Blog/404</loc>
+    
+    <lastmod>2024-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ling-jun-hao.github.io/Blog/about/</loc>
     
     <lastmod>2024-05-31</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://ling-jun-hao.github.io/Blog/404</loc>
+    <loc>https://ling-jun-hao.github.io/Blog/tags/</loc>
     
     <lastmod>2024-05-31</lastmod>
     
@@ -290,6 +290,20 @@
   </url>
   
   <url>
+    <loc>https://ling-jun-hao.github.io/Blog/tags/Pure-Function/</loc>
+    <lastmod>2024-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ling-jun-hao.github.io/Blog/tags/JSX/</loc>
+    <lastmod>2024-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ling-jun-hao.github.io/Blog/tags/CommonJS/</loc>
     <lastmod>2024-11-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -340,13 +354,6 @@
   
   <url>
     <loc>https://ling-jun-hao.github.io/Blog/tags/Array-sort/</loc>
-    <lastmod>2024-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ling-jun-hao.github.io/Blog/tags/Pure-Function/</loc>
     <lastmod>2024-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -424,13 +431,6 @@
   
   <url>
     <loc>https://ling-jun-hao.github.io/Blog/tags/flex-%E9%A0%90%E8%A8%AD%E5%B1%AC%E6%80%A7/</loc>
-    <lastmod>2024-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ling-jun-hao.github.io/Blog/tags/JSX/</loc>
     <lastmod>2024-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
